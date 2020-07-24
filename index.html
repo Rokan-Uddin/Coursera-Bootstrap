@@ -32,7 +32,7 @@
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a id="loginbutton">
                     <span class="fa fa-sign-in"></span> Login</a>
                 </span>  
             </div>          
@@ -85,10 +85,11 @@
                 <div class="col-12 col-sm-3 align-self-center">
                     <img src="img/logo.png" class="img-fluid">
                 </div>
-                <div class="col-12 col-sm-3 align-self-center">             
-                    <a role="button" data-target="#reserve" data-toggle="modal" class="btn btn-block btn-warning" data-placement="bottom">
+                <div class="col-12 col-sm-3 align-self-center">
+                    <button id="reservebutton" class="btn btn-block btn-warning">Reserve table</button>             
+                   <!--  <a role="button" id="reservebutton" class="btn btn-block btn-warning">
                         Reserve Table
-                    </a>
+                    </a> -->
                 </div>
             </div>
         </div>
@@ -203,7 +204,7 @@
                 <h3>Meet our Culinary Specialists</h3>
             </div>
         </div>
-        <div id="reserve" class="modal fade" role="dialog">
+        <div id="reserveModel" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
             <!-- Modal content-->
             <div class="modal-content">
@@ -320,6 +321,14 @@
                     $("#carouselButton").children("span").addClass('fa-pause');                    
                 }
             });
+
+
+        $("#reservebutton").click(function(){
+                $("#reserveModel").modal("toggle");
+        });
+        $("#loginbutton").click(function() {
+            $("#loginModal").modal("toggle");
+        });
     </script>
 </body>
 
